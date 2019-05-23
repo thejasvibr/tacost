@@ -6,6 +6,7 @@ Created on Wed May 22 20:13:28 2019
 """
 
 import numpy as np 
+import pandas as pd
 import scipy.signal as signal 
 import scipy.spatial as spl
 import soundfile as sf
@@ -29,9 +30,9 @@ trajectory = np.column_stack((traj_x, traj_y, traj_z)).reshape(-1,3)
 
 # define mic positions  and calculate the radial distance to the mics 
 mic_posns = np.array(([0,0,0],
-                      [-0.52,-0.2,-0.3],
-                      [0.52,-0.2,-0.3],
-                      [0,-0.2,0.6]))
+                      [-1,0,-1],
+                      [1,0,-1],
+                      [0,0,1]))
 
 # calculate mic-bat distances for each call;
 t_calls_at_mics = np.zeros((t_emit.size, mic_posns.shape[0]))
@@ -45,7 +46,7 @@ for mic_num, each_mic_pos in enumerate(mic_posns):
 # create the WAV files :
 fs = 500000
 audio = np.zeros((int(rec_durn*fs), 4))
-audio += np.random.normal(0,10**(-80/20.0),audio.size).reshape(-1,4)
+audio += np.random.normal(0,10**(-90/20.0),audio.size).reshape(-1,4)
 audio = np.float32(audio)
 
 # create bat call that will be put into the audio
@@ -69,4 +70,6 @@ for each_channel in range(mic_posns.shape[0]):
     assign_call_to_mic(audio[:,each_channel], bat_call,
                                                  t_calls_at_mics[:,each_channel])
 
-sf.write('3d_4channel_recording.WAV', audio, fs)
+sf.write('2d_WEIRDtristar_4channel_recording.WAV', audio, fs)
+#pd.DataFrame(data=np.column_stack((trajectory,t_emit)),
+#             columns=['x','y','z','t_emit']).to_csv('trajectory_path.csv')

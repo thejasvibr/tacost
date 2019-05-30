@@ -21,18 +21,19 @@ plt.rcParams['agg.path.chunksize'] = 100000
 
 v_bat = 5.0 # m/s
 v_sound = 338.0 # m/s
-rec_durn = 4.0 # seconds
+rec_durn = 1.2 # seconds
 t_emit = np.arange(0.1,rec_durn,0.1)
-radius = 3.0
-traj_x = np.zeros(t_emit.size) # so that the bat makes a pass from the left to the right 
-traj_y = 1.5 + t_emit*v_bat
+radius = 5.0
+theta_dot = v_bat/radius # since r * thetadot = v_bat
+traj_x = radius  * np.cos(theta_dot*v_bat*t_emit)
+traj_y =  5 + radius  * np.sin(theta_dot*v_bat*t_emit)
 traj_z = np.zeros(traj_x.size)
 trajectory = np.column_stack((traj_x, traj_y, traj_z)).reshape(-1,3)
 
 # define mic positions  and calculate the radial distance to the mics 
 mic_posns = np.array(([0,   0     ,0],
-                      [-0.52,-0.0,-0.3],
-                      [0.52,-0.0,-0.3],
+                      [-0.52,-0.2,-0.3],
+                      [0.52,-0.2,-0.3],
                       [0,-0.2,0.6]))
 
 # calculate mic-bat distances for each call;
@@ -71,7 +72,7 @@ for each_channel in range(mic_posns.shape[0]):
     assign_call_to_mic(audio[:,each_channel], bat_call,
                                                  t_calls_at_mics[:,each_channel])
 
-audio_file_name = 'bat_flying_in_arc_from_2D_60cmtristar'
+audio_file_name = 'bat_flying_in_circle_from_3D_60cmtristar'
 sf.write(audio_file_name+'.WAV', audio, fs)
 pd.DataFrame(data=np.column_stack((trajectory,t_emit)),
              columns=['x','y','z','t_emit']).to_csv(audio_file_name+'_trajectory_path.csv')

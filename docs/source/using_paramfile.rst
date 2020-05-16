@@ -1,0 +1,109 @@
+tact without coding - the parameter file
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+You can use `tact` without any coding at all through the parameter file!
+All optional parameters can be fine tuned in the 'parameter' file. A parameter file 
+is a YAML file. A YAML file basically looks and feels like 
+a .txt file, except that it ends with .yml or .yaml. You can make your own parameters file in Windows
+by right-clicking and creating a new .txt file, and then changing the extension to .yml! In Unix 
+systems you can do this with :code:`touch yourparamfile.yml`. 
+
+A basic parameter file consists of the parameter to be specified and the entry in one row separated by a colon. 
+This is what an example parameter file would look like if you wanted the emitted sound 
+to be a bird call (stored in a wav file), the final audio to have a sampling rate of 44.1kHz,
+and to generate the simulated sound arrival for your own
+microphone array. You also want to make sure this simulation run is called 'birdsim'. This is what your parameter file would look like. 
+
+:code:`yourparameterfile.yml` :
+
+.. code-block:: shell
+	
+	array_geometry : agm_yourcoolgeometry.csv
+	sample_rate    : 44100            
+	source_sound   : bird_call.wav     	
+	sim_name       : bird_sim             
+
+Next, open up your Command Prompt (Windows)  or Terminal (Unix)
+and feed the parameter file into `tact` with the simple command below
+
+.. code-block:: shell
+   
+   python -m tact -paramfile yourparameterfile.yml
+
+Array geometry
+<<<<<<<<<<<<<<
+
+.. code-block:: shell
+
+	array_geometry : agm_yourownarraygeometry.csv
+
+`Attention` :  An array geometry file must contain at least 2 microphones with their x,y,z positions.
+The first row of the array geometry file must be named (eg.'x', 'y' and 'z') with each microphone 
+in a separate row. 
+
+Source positions
+<<<<<<<<<<<<<<<<
+
+.. code-block:: shell
+
+	source_position : sourcepos_yourownsourcepositions.csv
+
+`Attention` :  An source position file must contain at least 2 microphones with their x,y,z positions.
+The first row of the source position file must be named (eg.'x', 'y' and 'z') with each source position  
+in a separate row. 
+
+Sampling rate
+<<<<<<<<<<<<<
+By default the sampling rate is set to XYZ kHz. To set it to another value add
+something like this into the parameter file. 
+
+.. code-block:: shell
+	
+	sample_rate: 44100
+
+
+
+Source sound
+<<<<<<<<<<<<<
+By default the sound assumed to be emitted is a linear frequency modulated chirp. 
+You can provide your own sound in the form of a wav file. In the parameter file 
+the entry would be 
+
+.. code-block:: shell
+
+	source_sound: example_sound.wav
+
+
+`Attention` : The sampling rate of the input wav file `must` match the sampling rate of the output wav file! There is no
+explicit checking for a match between the default/user-set final sampling rate and the source sound's sampling rate.
+
+Inter-sound interval
+<<<<<<<<<<<<<<<<<<<<
+Each simulated source position corresponds to a single sound in the multichannel audio file. 
+The time gap between one sound to the next is the inter-sound interval. The default value is 
+100ms, and it can be specified in seconds so:
+
+.. code-block:: shell
+
+	intersound_interval: 0.05
+
+
+Here the inter sound interval has been set to 50ms.
+
+Signal-to-Noise-Ratio
+<<<<<<<<<<<<<<<<<<<<<
+By default the signal-to-noise ratio of the emitted sound is assumed to be very high (>120dB). 
+If you wish to set it to something else, then enter the SNR of your choice like so:
+
+.. code-block:: shell
+
+	sound_snr: [30]
+
+Here we've set the overall SNR to 30dB for all channels. 
+`Note` : SNR values must be set inside a list (within square brackets). If all channels are to have the same SNR values,
+then one value in a list is enough.
+
+If you'd like to define channel-specific SNR's then specify unique values for each  channel, eg:
+ 
+.. code-block:: shell
+
+	sound_snr: [30, 20, 10,40]

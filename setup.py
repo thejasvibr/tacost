@@ -1,22 +1,20 @@
 """Setup for the chocobo package."""
-
+import tact
 import setuptools
 
-
-with open('README.md') as f:
-    README = f.read()
+version_number = tact.__version__
 
 setuptools.setup(
     author="Thejasvi Beleyur",
     author_email="thejasvib@gmail.com",
-    name='testacoustictracking',
+    name='tact',
     license="MIT",
-    description='A package to create simulated sound sources/ trajectories to test accuracy of an acoustic tracking system',
-    version='v0.0.0',
-    long_description=README,
+    description='tact: Test ACoustic Tracking: Create simulated sound sources/ trajectories to test the accuracy of an acoustic tracking system',
+    version=version_number,
+    long_description='docs/source/index.rst',
     url='https://github.com/thejasvibr/test_acoustictracking.git',
     packages=setuptools.find_packages(),
-	install_requires=['numpy', 'matplotlib','pandas','soundfile','scipy'],
+	install_requires=['numpy','pandas','pyyaml','scipy'],
     python_requires=">=3.5",
     classifiers=[
         # Trove classifiers

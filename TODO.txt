@@ -1,0 +1,4 @@
+Things to implement
+1) make SNR balancing optional -- it's too clumsy if the user wants to combine multiple
+audio chunks from different runs
+2) reduce the whole bat centricity of it all

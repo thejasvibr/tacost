@@ -1,0 +1,7 @@
+numpy>1.15
+pandas
+pyyaml
+scipy
+recommonmark
+sphinx==3.0.3
+sphinx_rtd_theme

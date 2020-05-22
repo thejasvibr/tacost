@@ -1,13 +1,13 @@
 """Setup for the chocobo package."""
-import tact
+import tacost
 import setuptools
 
-version_number = tact.__version__
+version_number = tacost.__version__
 
 setuptools.setup(
     author="Thejasvi Beleyur",
     author_email="thejasvib@gmail.com",
-    name='tact',
+    name='tacost',
     license="MIT",
     description='tact: Test ACoustic Tracking: Create simulated sound sources/ trajectories to test the accuracy of an acoustic tracking system',
     version=version_number,

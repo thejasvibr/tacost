@@ -1,7 +1,7 @@
-TACT: Test ACoustic Tracking
+TACOST: Test ACOustic Tracking
 ============================
 
-`tact` allows you to be tactical about your acoustic tracking system. 
+`tacost` allows you to thoroughly test your acoustic tracking system. 
 It allows you to create audio recordings to simulate sound emission from 
 points of your choice, and thus allow you to test the ins and outs of your 
 acoustic tracking system of choice. 
@@ -15,7 +15,7 @@ Creating an audio file to test your system is as simple as opening up your shell
 
 .. code-block:: shell
 
-   python -m tact -example_track
+   python -m tacost -example_track
 
 
 The command above will generate a four channel WAV file with `X` Hz sampling rate based on the default array geometry and source positions. 
@@ -30,6 +30,6 @@ See the page on default array geometry and source position.
 
 API Reference 
 >>>>>>>>>>>>>
-.. automodule:: tact.simulate_LMU_playback_setup
+.. automodule:: tacost.simulate_LMU_playback_setup
 	:members:
 

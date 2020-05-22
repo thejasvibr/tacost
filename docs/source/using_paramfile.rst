@@ -1,6 +1,6 @@
-tact without coding - the parameter file
+tacost without coding - the parameter file
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-You can use `tact` without any coding at all through the parameter file!
+You can use `tacost` without any coding at all through the parameter file!
 All optional parameters can be fine tuned in the 'parameter' file. A parameter file 
 is a YAML file. A YAML file basically looks and feels like 
 a .txt file, except that it ends with .yml or .yaml. You can make your own parameters file in Windows
@@ -8,26 +8,46 @@ by right-clicking and creating a new .txt file, and then changing the extension 
 systems you can do this with :code:`touch yourparamfile.yml`. 
 
 A basic parameter file consists of the parameter to be specified and the entry in one row separated by a colon. 
+If a certain parameter is not specified explicitly by the user, the default value is assumed. This can either save you 
+a lot of work OR add a lot of agony - so please check the default values for each parameter to see if they make sense for 
+your use case. 
+
+Using tacost
+<<<<<<<<<<<<
 This is what an example parameter file would look like if you wanted the emitted sound 
 to be a bird call (stored in a wav file), the final audio to have a sampling rate of 44.1kHz,
 and to generate the simulated sound arrival for your own
-microphone array. You also want to make sure this simulation run is called 'birdsim'. This is what your parameter file would look like. 
+microphone array. You also want to name this simulation run is called 'birdsim'. This is what your parameter file would look like. 
 
 :code:`yourparameterfile.yml` :
 
 .. code-block:: shell
-	
+
 	array_geometry : agm_yourcoolgeometry.csv
 	sample_rate    : 44100            
 	source_sound   : bird_call.wav     	
 	sim_name       : bird_sim             
 
 Next, open up your Command Prompt (Windows)  or Terminal (Unix)
-and feed the parameter file into `tact` with the simple command below
+and feed the parameter file into `tacost` with the simple command below
 
 .. code-block:: shell
    
-   python -m tact -paramfile yourparameterfile.yml
+   python -m tacost -paramfile yourparameterfile.yml
+
+And voila - you should get a wav file named :code:`bird_sim.wav` that simulates sound sources as recorded by the mics in your cool array geometry. 
+The sound simulated will the audio in the `bird_call.wav` file as played back from each of the positions. Here the default LMU position set is 
+used because the source positions were not explicitly specified.
+
+`Attention`
+-----------
+As of version 0.0.1 there is `no` spherical spreading or atmospheric absorption implemented in `tacost`. Only the time of arrivals 
+are calculated. This means `tacost` is a tool for testing the `inherent` accuracy of your tracking system over different parts of space. 
+Acoustic arrays are known to have non-uniform accuracies - and these may be picked up for your own custom array! `tacost` allows
+you to uncover the tracking accuracies under 'best case' scenarios, and not so much the real-world performance of your system. 
+
+You could of course implement a form of spherical spreading or atmospheric absorption by using a scaled version of the same source sound (see source sound). The better
+alternative is to interact with `tacust` through a script of course.
 
 Array geometry
 <<<<<<<<<<<<<<
@@ -47,14 +67,15 @@ Source positions
 
 	source_position : sourcepos_yourownsourcepositions.csv
 
-`Attention` :  An source position file must contain at least 2 microphones with their x,y,z positions.
+`Attention` :  An source position file must contain at least 1 position with its x,y,z positions.
 The first row of the source position file must be named (eg.'x', 'y' and 'z') with each source position  
 in a separate row. 
 
+
 Sampling rate
 <<<<<<<<<<<<<
-By default the sampling rate is set to XYZ kHz. To set it to another value add
-something like this into the parameter file. 
+By default the sampling rate is set to 500 kHz (because, the package author works with ultrasound a lot).
+To set it to 44.1kHz for instance - add this in the parameter file. 
 
 .. code-block:: shell
 	

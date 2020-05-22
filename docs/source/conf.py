@@ -41,6 +41,8 @@ templates_path = ['_templates']
 exclude_patterns = []
 
 
+# Add a logo
+html_logo = '../logo.png'
 
 # allow the index.rst as the master doc
 master_doc = 'index'

@@ -1,10 +1,30 @@
 TACOST: Test ACOustic Tracking
 ============================
 
-`tacost` allows you to thoroughly test your acoustic tracking system. 
-It allows you to create audio recordings to simulate sound emission from 
-points of your choice, and thus allow you to test the ins and outs of your 
-acoustic tracking system of choice. 
+`tacost` allows you to test and characterise the accuracy of your acoustic tracking system. 
+It allows you to create audio recordings to simulate sound emission from known points of your choice,
+ and uncover the maximum expected accuracy of your acoustic tracking system.
+
+What TACOST does
+>>>>>>>>>>>>>>>>
+
+* Creates audio files which simulate sound arrival at each microphone in an array from 
+user-specified points
+* Allows customisation of multiple parameters that may affect acoustic tracking accuracy
+
+What TACOST does `not` do
+>>>>>>>>>>>>>>>>>>>>>>>>>
+
+* Perform the actual acoustic tracking. You need to use a separate system (eg. Batalef, TOADSuite, 
+or the acoustic tracking system of your choice)
+* Simulate complex sound propagation (reflection, reverberation,etc). Sound is assumed to travel 
+in straight line paths. In version 0.0.1 there's no spherical spreading too!
+
+About the logo
+>>>>>>>>>>>>>>
+The two T's in the logo are tristar arrays (shaped like T's) with four microphones each on them 
+(blue dots). The red dots are positions from where sound was emitted. In this case, I like to 
+imagine it to be a bat's calls as it flew past two arrays!
 
 Getting started
 >>>>>>>>>>>>>>>

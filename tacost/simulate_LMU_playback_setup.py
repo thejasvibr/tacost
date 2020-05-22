@@ -8,7 +8,6 @@ Created on Wed May 22 20:13:28 2019
 import numpy as np 
 import pandas as pd
 import scipy.signal as signal 
-import soundfile as sf
 
 
 rms = lambda X: np.sqrt(np.mean(X**2.0))

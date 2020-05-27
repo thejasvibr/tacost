@@ -43,7 +43,7 @@ used because the source positions were not explicitly specified.
 -----------
 As of version 0.0.1 there is `no` spherical spreading or atmospheric absorption implemented in `tacost`. Only the time of arrivals 
 are calculated. This means `tacost` is a tool for testing the `inherent` accuracy of your tracking system over different parts of space. 
-Acoustic arrays are known to have non-uniform accuracies - and these may be picked up for your own custom array! `tacost` allows
+Acoustic arrays are known to have non-homogenuous accuracies across a volume - and these can be characterised for your array configuration! `tacost` allows
 you to uncover the tracking accuracies under 'best case' scenarios, and not so much the real-world performance of your system. 
 
 You could of course implement a form of spherical spreading or atmospheric absorption by using a scaled version of the same source sound (see source sound). The better
@@ -51,6 +51,7 @@ alternative is to interact with `tacust` through a script of course.
 
 Array geometry
 <<<<<<<<<<<<<<
+
 .. code-block:: shell
 
 	array_geometry : agm_yourownarraygeometry.csv

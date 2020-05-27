@@ -32,11 +32,9 @@ Getting started
 
 Creating an audio file to test your system is as simple as opening up your shell/command line and typing:
 
-`EXAMPLE TRACK .... NOTYETIMPLEMENTED!!`
-
 .. code-block:: shell
 
-   python -m tacost -example_track
+   python -m tacost -run_example
 
 
 The command above will generate a four channel WAV file with `X` Hz sampling rate based on the default array geometry and source positions. 

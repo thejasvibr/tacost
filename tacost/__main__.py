@@ -15,11 +15,12 @@ parser.add_argument('-paramfile', action="store",
                                 the documentation')
 
 parser.add_argument('-run_example', 
-                    action="store", dest="run_example", 
-                    default=False,
+                    action="store_true", dest="run_example", 
+                    default=True,
                     help='Runs and example source position set on the default array geometry and outputs\
                     1) the wav file, 2) the source positions and 3) the array geometry')
 
+msg = 'TACOST example audio dataset ready...'
 
 def main(arg_parser):
     '''
@@ -32,6 +33,8 @@ def main(arg_parser):
         parameters = parse_paramfile(args.param_file)
 
         tacost.make_sim_audio.make_tact_audio(**parameters)
+    
+    print(msg)
 
 
 def parse_paramfile(paramfile_path):

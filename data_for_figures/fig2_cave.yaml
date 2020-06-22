@@ -1,0 +1,4 @@
+array_geometry : cave_survey_without_mic_index.csv
+source_position : cave_source_positions.csv
+intersound_interval: 0.05
+sim_name       : fig2_cave_audio

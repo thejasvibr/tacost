@@ -1,0 +1,3 @@
+source_position : tristar_source_positions.csv
+intersound_interval: 0.05
+sim_name       : fig1_tristar_audio

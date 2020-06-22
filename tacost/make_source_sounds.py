@@ -11,6 +11,15 @@ import numpy as np
 
 def make_bat_call(**kwargs):
     '''
+    Makes a linear sweep from 0.4*sample rate to 0.1*sample rate
+    
+    Parameters
+    ----------
+    sample_rate : float>0
+    
+    call_durn : float>0, optional
+        Defaults to 0.003 s
+    
     '''
     sample_rate = kwargs['sample_rate']
     # create bat call that will be put into the audio

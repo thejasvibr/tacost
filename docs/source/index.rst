@@ -1,9 +1,11 @@
 TACOST: Test ACOustic Tracking
-============================
+==============================
 
 `tacost` allows you to test and characterise the accuracy of your acoustic tracking system. 
 It allows you to create audio recordings to simulate sound emission from known points of your choice,
-and uncover the maximum expected accuracy of your acoustic tracking system.
+and uncover the maximum expected accuracy of your acoustic tracking system. 
+
+If you're reading this on PyPi - then see detailed documentation at: itsfm.rtfd.io
 
 What TACOST does
 >>>>>>>>>>>>>>>>

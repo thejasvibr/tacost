@@ -44,7 +44,8 @@ See the page on default array geometry and source position.
 
 Installation
 >>>>>>>>>>>>
-`tacost` is currently pre-PyPi and it'll be some time before you can :code:`pip install tacost`!
+Update: `tacost` is currently on PyPi and so you can now :code:`pip install tacost`!
+
 However, you `can` use :code:`tacost` with a local install! Head `here https://github.com/thejasvibr/tacost` and download the repo. From the downloaded
 repo open up a shell/prompt and type :code:`pip install ./` . 
 

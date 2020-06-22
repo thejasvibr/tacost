@@ -1,4 +1,4 @@
-__version__ = "0.1.2"
+__version__ = "0.1.35"
 
 from tacost import simulate_LMU_playback_setup
 from tacost import calculate_toa

@@ -1,0 +1,11 @@
+include *.png
+include *.wav
+include *.csv
+include docs/*.png
+include docs/*.bat
+include docs/*.txt
+include docs/Makefile
+include docs/source/*.py
+include docs/source/*.rst
+include docs/source/_static/*
+

@@ -39,14 +39,14 @@ Creating an audio file to test your system is as simple as opening up your shell
    python -m tacost -run_example
 
 
-The command above will generate a four channel WAV file with `X` Hz sampling rate based on the default array geometry and source positions. 
+The command above will generate a four channel WAV file with `500` kHz sampling rate based on the default array geometry and source positions. 
 See the page on default array geometry and source position. 
 
 Installation
 >>>>>>>>>>>>
 Update: `tacost` is currently on PyPi and so you can now :code:`pip install tacost`!
 
-However, you `can` use :code:`tacost` with a local install! Head `here https://github.com/thejasvibr/tacost` and download the repo. From the downloaded
+However if you want the latest version, you can also use :code:`tacost` with a local install. Head `here https://github.com/thejasvibr/tacost` and download the repo. From the downloaded
 repo open up a shell/prompt and type :code:`pip install ./` . 
 
 .. toctree::

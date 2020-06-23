@@ -1,22 +1,25 @@
 ---
 title: 'tacost: Testing and simulating the performance of acoustic tracking systems'
-tags:
-  - Python
-  - acoustics
-  - bioacoustics
-  - sound
-  - acoustic tracking
-  - echolocation
 authors:
-  - name: Thejasvi Beleyur
-    orcid: 0000-0001-5360-4383
-    affiliation: "1"
-
+- affiliation: '1'
+  name: 'Thejasvi Beleyur'
+  orcid: 0000-0001-5360-4383
 affiliations:
- - name: Acoustic and Functional Ecology, Max Planck Institute for Ornithology, Seewiesen, Germany
-   index: 1
-date: 14 June 2020
+- index: 1
+  name: Acoustic and Functional Ecology, Max Planck Institute for Ornithology, Seewiesen,
+    Germany
+
+date: "14 June 2020"
+output: pdf_document
 bibliography: references.bib
+tags:
+- Python
+- acoustics
+- bioacoustics
+- sound
+- acoustic tracking
+- echolocation
+
 ---
 
 # Introduction

@@ -17,7 +17,7 @@ What TACOST does
 What TACOST does `not` do
 >>>>>>>>>>>>>>>>>>>>>>>>>
 
-* Perform the actual acoustic tracking. You need to use a separate system (eg. TOADSuite, Batalef, or the
+* Perform the actual acoustic tracking. You need to use a separate system (eg. Sound Finder, TOADSuite, Batalef, or the
   tracking system of your choice)
 
 * Simulate complex sound propagation (reflection, reverberation,etc). Sound is assumed to travel 

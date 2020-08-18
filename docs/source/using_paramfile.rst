@@ -1,5 +1,12 @@
 tacost without coding - the parameter file
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+`STOP.!!!! ` -  there are a couple of bugs with the parameter file mode to interact with `tacost`. The audio file outputs don't 
+seem to work as expected. I will not be working on the bugs in the near future, but will update this page as soon as things are fixed.
+The Python package style of using `tacost` still remains stable and works as expected. 
+
+-- last updated *18th August 2020*
+
 You can use `tacost` without any coding at all through the parameter file!
 All optional parameters can be fine tuned in the 'parameter' file. A parameter file 
 is a YAML file. A YAML file basically looks and feels like 
